@@ -1,3 +1,9 @@
+//------------------Notes----------------
+//Line 597
+//Move monsters around like pacman. Some try to cut the player off, surround him, slow him down, etc.
+
+
+
 var game = new Phaser.Game(940, 540, Phaser.AUTO, 'foo',
   { preload: preload, create: create, update: update });
 
@@ -594,6 +600,7 @@ function enemyFires() {
         }
         else if(livingMonsters[i].key === "monster3") {
           enemyBullet.reset(livingMonsters[i].x, livingMonsters[i].y);
+          //can I move this toward the place where the player is going to be?
           game.physics.arcade.moveToObject(enemyBullet,player,400);
         }
         else if(livingMonsters[i].key === "boss") {
